@@ -39,8 +39,8 @@ test('Browser section', async ({ page }) => {
     await expect(pageOne.getByTestId("address")).toHaveValue("Address1");
     await pageOne.getByTestId("address2").fill("Address2");
     await expect(pageOne.getByTestId("address2")).toHaveValue("Address2");
-    await pageOne.getByTestId("country").selectOption({value: "Canada"});
-    await expect(pageOne.getByTestId("country")).toHaveValue("Canada");
+    await pageOne.getByTestId("country").selectOption({value: "United States"});
+    await expect(pageOne.getByTestId("country")).toHaveValue("United States");
     await pageOne.getByTestId("state").fill("Delaware");
     await expect(pageOne.getByTestId("state")).toHaveValue("Delaware");
     await pageOne.getByTestId("city").fill("New Castle");
