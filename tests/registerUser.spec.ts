@@ -17,8 +17,8 @@ test('Browser section', async ({ page }) => {
     await expect(pageOne.locator("#id_gender1")).toBeChecked();
     await expect(pageOne.locator("#name")).toHaveValue("John Smith");
     await expect(pageOne.locator("#email")).toHaveValue("testttttttt@gmail.com");
-    await pageOne.locator("#password").fill("something");
-    await expect(pageOne.locator("#password")).toHaveValue("something");
+    await pageOne.locator("#password").fill("Something");
+    await expect(pageOne.locator("#password")).toHaveValue("Something");
     await pageOne.locator("#days").selectOption({value: "1"});
     await expect(pageOne.locator("#days")).toHaveValue("1");
     await pageOne.locator("#months").selectOption({value: "2"});
@@ -53,6 +53,7 @@ test('Browser section', async ({ page }) => {
     await expect(pageOne.getByText("Account Created!")).toBeVisible();
     await pageOne.getByTestId("continue-button").click();
     await expect(pageOne.getByText(" Logged in as ")).toBeVisible();
+    await expect(pageOne.getByText("John Smith")).toBeVisible();
     await pageOne.getByText(" Delete Account").click();
     await expect(pageOne.getByText("Account Deleted!")).toBeVisible();
     await pageOne.getByTestId("continue-button").click();
