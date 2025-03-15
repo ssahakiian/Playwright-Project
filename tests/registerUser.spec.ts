@@ -58,4 +58,5 @@ test('Browser section', async ({ page }) => {
     await expect(pageOne.getByText("Account Deleted!")).toBeVisible();
     await pageOne.getByTestId("continue-button").click();
 
+
 })
