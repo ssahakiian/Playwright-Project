@@ -7,11 +7,11 @@ const password = "Something";
 test("Sign up with valid credentials", async ({
     loginPage,
     signupPage,
-    consoleLog,
+
 }) => {
     await loginPage.goToPage();
     await loginPage.SignupWithEmailandName(email, name);
-    await consoleLog ("Mi ban");
+
     await expect(signupPage.name).toHaveValue(name);
     await expect(signupPage.email).toHaveValue(email);
 
