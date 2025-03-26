@@ -1,11 +1,11 @@
 import {test, expect, chromium, Browser, Page} from '@playwright/test';
 
-test('Browser section', async ({ page }) => {
+test('Register and delete user', async () => {
     const chromeBrowser: Browser = await chromium.launch({headless:false});
     const pageOne: Page = await chromeBrowser.newPage();
     await pageOne.goto("http://automationexercise.com");
     await expect(pageOne.locator("#header")).toBeVisible();
-    await pageOne.locator("a").filter({hasText: "Signup / Login"}).click();
+    await pageOne.locator("a", { hasText: ' Signup / Login '}).click();
     await expect(pageOne.getByText("New User Signup!")).toBeVisible();
     await pageOne.getByTestId("signup-name").fill("John Smith");
     await expect(pageOne.getByTestId("signup-name")).toHaveValue("John Smith");
@@ -45,10 +45,10 @@ test('Browser section', async ({ page }) => {
     await expect(pageOne.getByTestId("state")).toHaveValue("Delaware");
     await pageOne.getByTestId("city").fill("New Castle");
     await expect(pageOne.getByTestId("city")).toHaveValue("New Castle");
-    await pageOne.getByTestId("zipcode").fill("19720");
-    await expect(pageOne.getByTestId("zipcode")).toHaveValue("19720");
-    await pageOne.getByTestId("mobile_number").fill("3024148567");
-    await expect(pageOne.getByTestId("mobile_number")).toHaveValue("3024148567");
+    await pageOne.getByTestId("zipcode").fill("12345");
+    await expect(pageOne.getByTestId("zipcode")).toHaveValue("12345");
+    await pageOne.getByTestId("mobile_number").fill("123456789");
+    await expect(pageOne.getByTestId("mobile_number")).toHaveValue("123456789");
     await pageOne.getByTestId("create-account").click();
     await expect(pageOne.getByText("Account Created!")).toBeVisible();
     await pageOne.getByTestId("continue-button").click();
