@@ -3,14 +3,11 @@ import {  Page } from '@playwright/test';
 export class BasePage {
     readonly page: Page;
     readonly pageUrl: string;
+    readonly baseURL: string = "https://www.automationexercise.com";
 
     constructor(page: Page, pageUrl: string) {
         this.page = page;
-        this.pageUrl = pageUrl;
-    }
-
-    async goToPage() {
-        await this.page.goto(this.pageUrl);
+        this.pageUrl = this.baseURL + pageUrl;
     }
 
     async reloadPage() {

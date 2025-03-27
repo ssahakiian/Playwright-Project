@@ -3,13 +3,13 @@ import { test } from "./baseTest";
 
 const email = "testttttttt@gmail.com";
 const password = "Something";
+const name = "John"
 
 test("Sign up with valid credentials", async ({
     loginPage,
-    signupPage,
-
+    signupPage
 }) => {
-    await loginPage.goToPage();
+    await signupPage.goToPage();
     await loginPage.SignupWithEmailandName(email, name);
 
     await expect(signupPage.name).toHaveValue(name);

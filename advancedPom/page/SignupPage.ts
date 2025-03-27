@@ -30,12 +30,11 @@ export class SignupPage extends BasePage {
     };
 
     constructor(
-        page: Page,
-        pageUrl = "/signup",
+        page: Page
     ) {
-        super(page, pageUrl);
-        this.email = page.getByTestId("email");
-        this.name = page.getByTestId("name");
+        super(page, "/signup");
+        this.email = page.getByTestId("signup-email");
+        this.name = page.getByTestId("signup-name");
         this.password = page.getByTestId("password");
         this.mrRadioButton = page.getByRole("radio", {name: "Mr."});
         this.mrsRadioButton = page.getByRole("radio", {name: "Mrs."});
