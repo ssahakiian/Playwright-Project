@@ -33,8 +33,8 @@ export class SignupPage extends BasePage {
         page: Page
     ) {
         super(page, "/signup");
-        this.email = page.getByTestId("signup-email");
-        this.name = page.getByTestId("signup-name");
+        this.email = page.getByTestId("email");
+        this.name = page.getByTestId("name");
         this.password = page.getByTestId("password");
         this.mrRadioButton = page.getByRole("radio", {name: "Mr."});
         this.mrsRadioButton = page.getByRole("radio", {name: "Mrs."});
@@ -43,7 +43,7 @@ export class SignupPage extends BasePage {
         this.addressInput = page.getByTestId("address");
         this.countryDropdown = page.getByTestId("country");
         this.stateInput = page.getByTestId("state");
-        this.zipCodeInput = page.getByTestId("zip_code");
+        this.zipCodeInput = page.getByTestId("zipcode");
         this.cityInput = page.getByTestId("city");
         this.mobileNumberInput = page.getByTestId("mobile_number");
         this.createAccountButton = page.getByTestId("create-account");

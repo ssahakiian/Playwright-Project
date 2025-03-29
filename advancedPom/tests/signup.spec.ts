@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 import { test } from "./baseTest";
 
-const email = "testttttttt@gmail.com";
+const email = "testtttttttttttttttt@gmail.com";
 const password = "Something";
 const name = "John"
 
